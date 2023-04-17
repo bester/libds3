@@ -20,7 +20,11 @@ BuildRequires:  gcc-c++
 BuildRequires:  libcurl-devel
 BuildRequires:  libxml2-devel
 BuildRequires:  glib2-devel
+%if %{?suse_version}%{!?suse_version:0} == 0
 BuildRequires:  openssl-devel
+%else
+BuildRequires:  libopenssl-1_1-devel
+%endif
 BuildRequires:  cmake
 Requires:       curl openssl
 Conflicts:      libds3
